@@ -1,0 +1,10 @@
+/.git
+/.github
+/coverage
+/doc
+/log/*
+/tmp/*
+CHANGELOG.txt
+README.md
+.gitignore
+.ruby-version
