@@ -27,6 +27,13 @@ services:
     image: redis
     volumes:
       - redis_data:/data
+  githooks:
+    build:
+      context: .
+      dockerfile: 'Dockerfile.githooks'
+    volumes:
+      - ./.git:/tmp/.git
+      - ./.githooks:/tmp/.githooks
 
 volumes:
   pg_data:
