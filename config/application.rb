@@ -20,5 +20,10 @@ module SustainableApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Once an application reaches a certain maturity level, we want to use
+    # every trick in the book to boost efficiency, preserve data correctness, and ensure
+    # blazing-fast performance. Using the SQL format makes that possible
+    config.active_record.schema_format = :sql
   end
 end
