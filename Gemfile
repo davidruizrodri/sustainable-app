@@ -47,6 +47,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'lograge', '~> 0.12'
 
 group :development, :test do
+  # Bullet notifies you when you should add eager loading (N+1 queries), when you're using
+  # eager loading that isn't necessary and when you should use counter cache.
+  gem 'bullet', '~> 7.0'
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
