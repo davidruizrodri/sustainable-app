@@ -8,3 +8,4 @@ CHANGELOG.txt
 README.md
 .gitignore
 .ruby-version
+/.githooks/*
