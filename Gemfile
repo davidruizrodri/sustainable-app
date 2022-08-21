@@ -46,6 +46,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # lograge changes Rails' logging to a more traditional one-line-per-event format
 gem 'lograge', '~> 0.12'
 
+# Tool to catch unsafe migrations
+gem 'strong_migrations', '~> 1.2'
+
 group :development, :test do
   # Bullet notifies you when you should add eager loading (N+1 queries), when you're using
   # eager loading that isn't necessary and when you should use counter cache.

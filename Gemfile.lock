@@ -265,6 +265,8 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
+    strong_migrations (1.2.0)
+      activerecord (>= 5.2)
     strscan (3.0.4)
     tailwindcss-rails (2.0.12-x86_64-linux)
       railties (>= 6.0.0)
@@ -323,6 +325,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  strong_migrations (~> 1.2)
   tailwindcss-rails
   test-prof (~> 1.0)
   turbo-rails
