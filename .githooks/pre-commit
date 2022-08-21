@@ -1,19 +1,40 @@
 #!/bin/sh
+
+# --- Rubocop lint ---
+
 echo "\nRunning rubocop 🚓 💨 💨 💨\n"
 
-declare -a ERRORS=()
+declare -a RUBOCOP_ERRORS=()
 
-for file in $(git diff --cached --name-only | grep -E '.rb')
+for file in $(git diff --cached --name-only | grep -E '\.rb$')
 do
-	ERRORS+=("$(docker-compose exec -T web rubocop $file | grep -e 'C:' -e 'E:')")
+	RUBOCOP_ERRORS+=("$(docker-compose exec -T web rubocop $file | grep -e 'C:' -e 'E:')")
 done
 
-if [[ "$ERRORS" != "" ]]; then
+if [[ "$RUBOCOP_ERRORS" != "" ]]; then
 	echo "\n 🚨 BEE-BOP! There are some things that you need to fix before commiting!\n"
-	history -p "${ERRORS[@]}"
+	history -p "${RUBOCOP_ERRORS[@]}"
   exit 1
 fi
 
-echo "Done! Rubocop has no complains! ✅\n"
+echo "\n ✅ Done! Rubocop has no complains!\n"
+
+# --- ERB lint ---
+echo "\nRunning ERB lint 🚓 💨 💨 💨\n"
+
+declare -a ERB_LINT_ERRORS=()
+
+for file in $(git diff --cached --name-only | grep -E '\.erb$')
+do
+	ERB_LINT_ERRORS+=("$(docker-compose exec -T web bundle exec erblint --format compact $file | grep -e '\.erb:')")
+done
+
+if [[ "$ERB_LINT_ERRORS" != "" ]]; then
+	echo "\n 🚨 BEE-BOP! There are some things that you need to fix before commiting!\n"
+	history -p "${ERB_LINT_ERRORS[@]}"
+  exit 1
+fi
+
+echo "\n ✅ Done! ERB lint has no complains!\n"
 
 exit 0

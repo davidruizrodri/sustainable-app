@@ -58,6 +58,9 @@ group :development, :test do
   # in files for development and testing
   gem 'dotenv-rails', '~> 2.8'
 
+  # Tool to help lint your ERB or HTML files
+  gem 'erb_lint', '~> 0.2', require: false
+
   # Use factories for test-specific data that you need
   gem 'factory_bot_rails', '~> 6.2'
 
