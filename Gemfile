@@ -70,10 +70,14 @@ group :development, :test do
   # Use Faker to generate all test data
   gem 'faker', '~> 2.22'
 
+  # Use RSpec instead of default Minitest framework
+  gem 'rspec-rails', '~> 5.1'
+
   gem 'rubocop', '~> 1.35', require: false
   gem 'rubocop-minitest', '~> 0.21', require: false
   gem 'rubocop-performance', '~> 1.14', require: false
   gem 'rubocop-rails', '~> 2.15', require: false
+  gem 'rubocop-rspec', '~> 2.12', require: false
 end
 
 group :development do
@@ -89,8 +93,12 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 
-  # This provides better test output
-  gem 'minitest-reporters', '~> 1.5'
+  # Provides one-liners to test common Rails functionality
+  gem 'shoulda-matchers', '~> 5.1'
+
+  # SuperDiff is a gem that hooks into RSpec to intelligently display the differences
+  # between two data structures of any type.
+  gem 'super_diff', '~> 0.9'
 
   # TestProf is a collection of different tools to analyze your test suite performance.
   # It also provides some helpers like let_it_be or before_all to speed the test suite up

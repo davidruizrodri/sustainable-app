@@ -25,5 +25,7 @@ module SustainableApp
     # every trick in the book to boost efficiency, preserve data correctness, and ensure
     # blazing-fast performance. Using the SQL format makes that possible
     config.active_record.schema_format = :sql
+
+    config.generators.test_framework = :rspec
   end
 end
