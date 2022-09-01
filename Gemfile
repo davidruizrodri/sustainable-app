@@ -43,6 +43,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 
 ## ---- Our gems - keep in alphabetical order and document why each one is included ----
+# Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise', '~> 4.8'
+
 # lograge changes Rails' logging to a more traditional one-line-per-event format
 gem 'lograge', '~> 0.12'
 

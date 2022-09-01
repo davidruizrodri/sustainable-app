@@ -26,6 +26,10 @@ module SustainableApp
     # blazing-fast performance. Using the SQL format makes that possible
     config.active_record.schema_format = :sql
 
+    config.to_prepare do
+      Devise::SessionsController.layout 'devise'
+    end
+
     config.generators.test_framework = :rspec
   end
 end
