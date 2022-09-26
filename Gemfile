@@ -52,6 +52,9 @@ gem 'lograge', '~> 0.12'
 # Tool to catch unsafe migrations
 gem 'strong_migrations', '~> 1.2'
 
+# Framework for building reusable, testable & encapsulated view components
+gem 'view_component', '~> 2.72'
+
 group :development, :test do
   # Bullet notifies you when you should add eager loading (N+1 queries), when you're using
   # eager loading that isn't necessary and when you should use counter cache.
