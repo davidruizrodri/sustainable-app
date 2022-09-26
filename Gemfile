@@ -7,7 +7,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 ## ---- Rails should go at the top—it drives everything ----
-gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+gem 'rails', '~> 7.0.4', '>= 7.0.3.1'
 
 
 ## ---- These gems are managed/provided by rails new ----
